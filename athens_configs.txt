@@ -1,0 +1,36 @@
+Athens>en
+Password: 
+Password: 
+Athens#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Athens(config)#int s0/0
+Athens(config-if)#ip address 192.168.17.129 255.255.255.252
+Athens(config-if)#exit
+Athens(config)#int s1/0
+Athens(config-if)#ip address 192.168.17.149 255.255.255.252
+Athens(config-if)#exit
+Athens(config)#int s3/0
+Athens(config-if)#ip address 192.168.17.145 255.255.255.252
+Athens(config-if)#int f2/0
+Athens(config-if)#ip address 192.168.12.1 255.255.252.0
+Athens(config-if)#exit
+Athens(config)#ip route 0.0.0.0 0.0.0.0 s3/0
+Athens(config)#ip route 0.0.0.0 0.0.0.0 s0/0 2
+Athens(config)#router rip
+Athens(config-router)#version 2
+Athens(config-router)#network 192.168.17.148
+Athens(config-router)#network 192.168.17.144
+Athens(config-router)#network 192.168.17.128
+Athens(config-router)#network 192.168.12.0
+Athens(config-router)#passive-inter
+Athens(config-router)#passive-interface f2/0
+Athens(config-router)#def
+Athens(config-router)#default-information ori
+Athens(config-router)#default-information originate 
+Athens(config-router)#end
+Athens#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]

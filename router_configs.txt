@@ -1,0 +1,184 @@
+Alexandria>en
+Password: 
+Alexandria#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Alexandria(config)#int s0/0
+Alexandria(config-if)#ip address 192.168.17.154 255.255.255.252
+Alexandria(config-if)#exit
+Alexandria(config)#int s1/0
+Alexandria(config-if)#ip address 192.168.17.137 255.255.255.252
+Alexandria(config-if)#exit
+Alexandria(config)#int s3/0
+Alexandria(config-if)#ip address 192.168.17.146 255.255.255.252
+Alexandria(config-if)#exit
+Alexandria(config)#int s4/0
+Alexandria(config-if)#ip address 192.168.17.142 255.255.255.252
+Alexandria(config-if)#exit
+Alexandria(config)#int f2/0
+Alexandria(config-if)#ip address 192.168.8.1 255.255.252.0
+Alexandria(config-if)#exit
+Alexandria(config)#router rip
+Alexandria(config-router)#version 2
+Alexandria(config-router)#netwo
+Alexandria(config-router)#network 192.168.8.0
+Alexandria(config-router)#network 192.168.17.152
+Alexandria(config-router)#network 192.168.17.144
+Alexandria(config-router)#network 192.168.17.136
+Alexandria(config-router)#network 192.168.17.140
+Alexandria(config-router)#passi
+Alexandria(config-router)#passive-interface f2/0
+Alexandria(config-router)#def
+Alexandria(config-router)#default-information ori
+Alexandria(config-router)#default-information originate 
+Alexandria(config-router)#end
+Alexandria#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+
+
+Macedonia>en
+Password: 
+Macedonia#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Macedonia(config)#int s0/0
+Macedonia(config-if)#ip address 192.168.17.153 255.255.255.252
+Macedonia(config-if)#exit
+Macedonia(config)#int s1/0
+Macedonia(config-if)#ip address 192.168.17.150 255.255.255.252
+Macedonia(config-if)#exit
+Macedonia(config)#int f2/0
+Macedonia(config-if)#ip address 192.168.16.1 255.255.255.0
+Macedonia(config-if)#exit
+Macedonia(config)#ip route 0.0.0.0 0.0.0.0 s0/0
+Macedonia(config)#router rip
+Macedonia(config-router)#version 2
+Macedonia(config-router)#network 192.168.17.148
+Macedonia(config-router)#network 192.168.17.152
+Macedonia(config-router)#network 192.168.16.0
+Macedonia(config-router)#passi
+Macedonia(config-router)#passive-interface f2/0
+Macedonia(config-router)#defa
+Macedonia(config-router)#default-information ori
+Macedonia(config-router)#default-information originate 
+Macedonia(config-router)#end
+Macedonia#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+
+
+
+Athens>en
+Password: 
+Password: 
+Athens#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Athens(config)#int s0/0
+Athens(config-if)#ip address 192.168.17.129 255.255.255.252
+Athens(config-if)#exit
+Athens(config)#int s1/0
+Athens(config-if)#ip address 192.168.17.149 255.255.255.252
+Athens(config-if)#exit
+Athens(config)#int s3/0
+Athens(config-if)#ip address 192.168.17.145 255.255.255.252
+Athens(config-if)#int f2/0
+Athens(config-if)#ip address 192.168.12.1 255.255.252.0
+Athens(config-if)#exit
+Athens(config)#ip route 0.0.0.0 0.0.0.0 s3/0
+Athens(config)#ip route 0.0.0.0 0.0.0.0 s0/0 2
+Athens(config)#router rip
+Athens(config-router)#version 2
+Athens(config-router)#network 192.168.17.148
+Athens(config-router)#network 192.168.17.144
+Athens(config-router)#network 192.168.17.128
+Athens(config-router)#network 192.168.12.0
+Athens(config-router)#passive-inter
+Athens(config-router)#passive-interface f2/0
+Athens(config-router)#def
+Athens(config-router)#default-information ori
+Athens(config-router)#default-information originate 
+Athens(config-router)#end
+Athens#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+
+Punjab>en
+Password: 
+Punjab#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Punjab(config)#int s0/0
+Punjab(config-if)#ip add
+Punjab(config-if)#ip address 192.168.17.133 255.255.255.252
+Punjab(config-if)#exit
+Punjab(config)#int s1/0
+Punjab(config-if)#ip address 192.168.17.130 255.255.255.252
+Punjab(config-if)#exit
+Punjab(config)#int s3/0
+Punjab(config-if)#ip address 192.168.17.141 255.255.255.252
+Punjab(config-if)#exit
+Punjab(config)#int f2/0
+Punjab(config-if)#ip address 192.168.0.1 255.255.248.0
+Punjab(config-if)#exit
+Punjab(config)#ip route 0.0.0.0 0.0.0.0 s3/0
+Punjab(config)#router rip
+Punjab(config-router)#version 2
+Punjab(config-router)#network 192.168.17.128
+Punjab(config-router)#network 192.168.17.140
+Punjab(config-router)#network 192.168.17.132
+Punjab(config-router)#network 192.168.0.0
+Punjab(config-router)#passive
+Punjab(config-router)#passive-interface f2/0
+Punjab(config-router)#defa
+Punjab(config-router)#default-information origi
+Punjab(config-router)#default-information originate 
+Punjab(config-router)#end
+Punjab#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+
+Samarkand>en
+Password: 
+Samarkand#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Samarkand(config)#int s0/0
+Samarkand(config-if)#ip address 192.168.17.138 255.255.255.252
+Samarkand(config-if)#exit
+Samarkand(config)#int s1/0
+Samarkand(config-if)#ip address 192.168.17.134 255.255.255.252
+Samarkand(config-if)#exit
+Samarkand(config)#int f2/0
+Samarkand(config-if)#ip address 192.168.17.1 255.255.255.128
+Samarkand(config-if)#exit
+Samarkand(config)#ip route 0.0.0.0 0.0.0.0 s0/0
+Samarkand(config)#router rip
+Samarkand(config-router)#version 2
+Samarkand(config-router)#network 192.168.17.0
+Samarkand(config-router)#network 192.168.17.132
+Samarkand(config-router)#network 192.168.17.136
+Samarkand(config-router)#passive
+Samarkand(config-router)#passive-interface f2/0
+Samarkand(config-router)#defa
+Samarkand(config-router)#default-information orig
+Samarkand(config-router)#default-information originate 
+Samarkand(config-router)#end
+Samarkand#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]

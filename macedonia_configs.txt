@@ -1,0 +1,31 @@
+Macedonia>en
+Password: 
+Macedonia#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Macedonia(config)#int s0/0
+Macedonia(config-if)#ip address 192.168.17.153 255.255.255.252
+Macedonia(config-if)#exit
+Macedonia(config)#int s1/0
+Macedonia(config-if)#ip address 192.168.17.150 255.255.255.252
+Macedonia(config-if)#exit
+Macedonia(config)#int f2/0
+Macedonia(config-if)#ip address 192.168.16.1 255.255.255.0
+Macedonia(config-if)#exit
+Macedonia(config)#ip route 0.0.0.0 0.0.0.0 s0/0
+Macedonia(config)#router rip
+Macedonia(config-router)#version 2
+Macedonia(config-router)#network 192.168.17.148
+Macedonia(config-router)#network 192.168.17.152
+Macedonia(config-router)#network 192.168.16.0
+Macedonia(config-router)#passi
+Macedonia(config-router)#passive-interface f2/0
+Macedonia(config-router)#defa
+Macedonia(config-router)#default-information ori
+Macedonia(config-router)#default-information originate 
+Macedonia(config-router)#end
+Macedonia#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]

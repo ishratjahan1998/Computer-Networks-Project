@@ -1,0 +1,31 @@
+Samarkand>en
+Password: 
+Samarkand#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Samarkand(config)#int s0/0
+Samarkand(config-if)#ip address 192.168.17.138 255.255.255.252
+Samarkand(config-if)#exit
+Samarkand(config)#int s1/0
+Samarkand(config-if)#ip address 192.168.17.134 255.255.255.252
+Samarkand(config-if)#exit
+Samarkand(config)#int f2/0
+Samarkand(config-if)#ip address 192.168.17.1 255.255.255.128
+Samarkand(config-if)#exit
+Samarkand(config)#ip route 0.0.0.0 0.0.0.0 s0/0
+Samarkand(config)#router rip
+Samarkand(config-router)#version 2
+Samarkand(config-router)#network 192.168.17.0
+Samarkand(config-router)#network 192.168.17.132
+Samarkand(config-router)#network 192.168.17.136
+Samarkand(config-router)#passive
+Samarkand(config-router)#passive-interface f2/0
+Samarkand(config-router)#defa
+Samarkand(config-router)#default-information orig
+Samarkand(config-router)#default-information originate 
+Samarkand(config-router)#end
+Samarkand#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]

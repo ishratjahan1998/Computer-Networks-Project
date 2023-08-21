@@ -1,0 +1,39 @@
+Alexandria>en
+Password: 
+Alexandria#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Alexandria(config)#int s0/0
+Alexandria(config-if)#ip address 192.168.17.154 255.255.255.252
+Alexandria(config-if)#exit
+Alexandria(config)#int s1/0
+Alexandria(config-if)#ip address 192.168.17.137 255.255.255.252
+Alexandria(config-if)#exit
+Alexandria(config)#int s3/0
+Alexandria(config-if)#ip address 192.168.17.146 255.255.255.252
+Alexandria(config-if)#exit
+Alexandria(config)#int s4/0
+Alexandria(config-if)#ip address 192.168.17.142 255.255.255.252
+Alexandria(config-if)#exit
+Alexandria(config)#int f2/0
+Alexandria(config-if)#ip address 192.168.8.1 255.255.252.0
+Alexandria(config-if)#exit
+Alexandria(config)#router rip
+Alexandria(config-router)#version 2
+Alexandria(config-router)#netwo
+Alexandria(config-router)#network 192.168.8.0
+Alexandria(config-router)#network 192.168.17.152
+Alexandria(config-router)#network 192.168.17.144
+Alexandria(config-router)#network 192.168.17.136
+Alexandria(config-router)#network 192.168.17.140
+Alexandria(config-router)#passi
+Alexandria(config-router)#passive-interface f2/0
+Alexandria(config-router)#def
+Alexandria(config-router)#default-information ori
+Alexandria(config-router)#default-information originate 
+Alexandria(config-router)#end
+Alexandria#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]

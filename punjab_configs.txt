@@ -1,0 +1,36 @@
+Punjab>en
+Password: 
+Punjab#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Punjab(config)#int s0/0
+Punjab(config-if)#ip add
+Punjab(config-if)#ip address 192.168.17.133 255.255.255.252
+Punjab(config-if)#exit
+Punjab(config)#int s1/0
+Punjab(config-if)#ip address 192.168.17.130 255.255.255.252
+Punjab(config-if)#exit
+Punjab(config)#int s3/0
+Punjab(config-if)#ip address 192.168.17.141 255.255.255.252
+Punjab(config-if)#exit
+Punjab(config)#int f2/0
+Punjab(config-if)#ip address 192.168.0.1 255.255.248.0
+Punjab(config-if)#exit
+Punjab(config)#ip route 0.0.0.0 0.0.0.0 s3/0
+Punjab(config)#router rip
+Punjab(config-router)#version 2
+Punjab(config-router)#network 192.168.17.128
+Punjab(config-router)#network 192.168.17.140
+Punjab(config-router)#network 192.168.17.132
+Punjab(config-router)#network 192.168.0.0
+Punjab(config-router)#passive
+Punjab(config-router)#passive-interface f2/0
+Punjab(config-router)#defa
+Punjab(config-router)#default-information origi
+Punjab(config-router)#default-information originate 
+Punjab(config-router)#end
+Punjab#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
